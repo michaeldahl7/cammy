@@ -1,0 +1,98 @@
+# Munchy
+
+Every time you choose to apply a rule(s), explicitly state the rule(s) in the output. You can abbreviate the rule description to a single word or phrase.
+
+## Project Context
+I want to build a web app that allows users to track their kitchen inventory. The goal is to help users better understand what they have in their kitchen, and to help them make better decisions about what to buy and what to eat.
+
+
+## Code Style and Structure
+- Dont optimize prematurely, we will iterate on the app and the codebase as we build it.
+- Work from first principles, dont assume anything.
+- Use functional and declarative programming patterns; avoid classes
+- Prefer iteration and modularization over code duplication
+- Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError)
+- Structure repository files as follows:
+
+```
+app/                      # Tanstack Router/Start directory
+├── routes/             # Route directory, filebased routing
+    ├── _authed/        # Authenticated routes
+    ├── _public/        # Public routes
+    ├── api/            # Tanstack start API routes directory
+    └── lib/            # Shared libraries
+├── routes/
+lib/                      # Shared libraries
+├── components/         # Shared React components
+├── enc/                # Custom React hooks
+├── hooks/              # Custom React hooks
+├── middleware/         # Tanstack Start middleware
+├── server/             # Server and Database directory
+├── services/           # Tanstack Start serverfn's and Tanstack Query
+├── styles/             # Global styling
+├── utils/              # Helper functions
+```
+
+## Tech Stack
+- React
+- TypeScript
+- Tailwind CSS
+- Shadcn UI
+- Postgres
+- DrizzleORM
+- Bun
+- Tanstack Router
+- Tanstack Query
+- Tanstack Start
+- Tanstack Form
+- Biome
+- Zod
+- Vite
+
+## Naming Conventions
+- Use lowercase with dashes for directories (e.g., components/form-wizard)
+- Favor named exports for components and utilities
+- Use lowercase with dashes for component files (e.g., username-form.tsx), but have the component function be Pascal case (e.g., export function UsernameForm)
+- Use camelCase for utility files (e.g., formValidator.ts)
+
+## TypeScript Usage
+- Use TypeScript for all code; prefer interfaces over types
+- Avoid enums; use const objects with 'as const' assertion
+- Use functional components with TypeScript interfaces
+- Avoid try/catch blocks unless there's good reason to translate or handle error in that abstraction
+- Use explicit return types for all functions
+
+
+## Syntax and Formatting
+- Use "function" keyword for pure functions
+- Avoid unnecessary curly braces in conditionals
+- Use declarative JSX
+
+
+## Error Handling
+- Implement proper error boundaries
+- Log errors appropriately for debugging
+- Provide user-friendly error messages
+- Handle network failures gracefully
+
+
+## Security
+- Sanitize user inputs via tanstack form and zod validator
+
+## Git Usage
+- When i send "cc", it means i want you to create a commit message for the diff of the working state.
+
+Commit Message Prefixes:
+- "fix:" for bug fixes
+- "feat:" for new features
+- "perf:" for performance improvements
+- "docs:" for documentation changes
+- "style:" for formatting changes
+- "refactor:" for code refactoring
+- "test:" for adding missing tests
+- "chore:" for maintenance tasks
+
+
+Rules:
+- Use lowercase for commit messages
+- Only respond witha  summary line concise

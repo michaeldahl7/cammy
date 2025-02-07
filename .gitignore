@@ -1,0 +1,25 @@
+# Turborepo
+.turbo
+
+# Dependencies
+node_modules
+
+# Build
+dist
+build
+.vinxi
+.output
+
+# Misc
+.DS_Store
+bun.lockb
+
+# Local env files
+.env
+
+# typescript
+dist/
+.cache
+
+
+
