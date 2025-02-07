@@ -6,7 +6,6 @@ import {
   CardTitle,
 } from '~/components/ui/card';
 import { createFileRoute } from '@tanstack/react-router';
-import { AddItemForm } from '~/components/forms/add-item-form';
 
 export const Route = createFileRoute('/_authed/dashboard')({
   component: DashboardRoute,
@@ -18,14 +17,10 @@ function DashboardRoute() {
       <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 p-4 md:min-h-min">
         <Card>
           <CardHeader>
-            <CardTitle>Add New Item</CardTitle>
-            <CardDescription>
-              Add a new item to your kitchen inventory
-            </CardDescription>
+            <CardTitle>Test</CardTitle>
+            <CardDescription>Test</CardDescription>
           </CardHeader>
-          <CardContent>
-            <AddItemForm />
-          </CardContent>
+          <CardContent>Test</CardContent>
         </Card>
       </div>
     </div>

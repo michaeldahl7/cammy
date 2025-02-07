@@ -18,26 +18,11 @@ import {
 } from '@tanstack/react-router';
 import { AppSidebar } from '~/components/layout/app-sidebar';
 
-import {
-  createDefaultHouseQueryOptions,
-  getHousesQueryOptions,
-} from '~/services/house/house.query';
-
 export const Route = createFileRoute('/_authed')({
-  beforeLoad: async ({ context }) => {
+  beforeLoad: ({ context }) => {
     if (!context.auth.user) {
       throw redirect({ to: '/signup' });
     }
-
-    if (!context.auth.user.currentHouseId) {
-      // Create default house and set it as current
-      await context.queryClient.ensureQueryData(
-        createDefaultHouseQueryOptions()
-      );
-    }
-
-    // Load houses data
-    await context.queryClient.ensureQueryData(getHousesQueryOptions());
 
     return { user: context.auth.user };
   },
@@ -57,7 +42,7 @@ function AuthedLayout() {
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
                   <BreadcrumbLink asChild>
-                    <Link to="/dashboard">Munchy</Link>
+                    <Link to="/dashboard">Cammy</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
               </BreadcrumbList>
